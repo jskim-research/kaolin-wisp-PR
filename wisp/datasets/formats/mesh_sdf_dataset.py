@@ -195,7 +195,7 @@ class MeshSampledSDFDataset(SDFDataset):
             pts = mesh_ops.point_sample(self.verts, self.faces, self.sample_mode, self.num_samples)
 
         if self.sample_tex:
-            rgb, _, d = mesh_ops.closest_tex(self.verts.cuda(), self.faces.cuda(), self.texv, self.texf, self.mats, pts)
+            d, rgb = mesh_ops.compute_sdf_rgb(self.verts.cuda(), self.faces.cuda(), pts.cuda(), self.texv, self.texf, self.mats)
         else:
             d = mesh_ops.compute_sdf(self.verts.cuda(), self.faces.cuda(), pts.cuda())
 

@@ -14,6 +14,7 @@ from .sample_near_surface import sample_near_surface
 from .sample_uniform import sample_uniform
 from .load_obj import load_obj
 from .compute_sdf import compute_sdf
+from .compute_sdf_rgb import compute_sdf_rgb
 from .normalize import normalize
 from .closest_point import closest_point
 from .closest_tex import closest_tex
